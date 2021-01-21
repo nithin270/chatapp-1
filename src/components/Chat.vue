@@ -84,7 +84,7 @@ export default {
       let ref=db.collection("Messages")
             ref.onSnapshot(function(snapshot) {
               console.log("messages array"+ this.messages)
-              snapshot.docChanges().forEach(function(change) {
+              snapshot.docChanges().forEach((change) => {
                   if (change.type === "added") {
                     console.log("messages array"+ this.messages)
                     var data=change.doc.data()
